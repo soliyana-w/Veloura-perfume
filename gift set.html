@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfume Shop | Perfumes | Fragrances | Gift Sets</title>    
+            <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/da/9d/fd/da9dfd50664d46a355457cde584f9f66.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: white;
+            color: black;
+        }
+
+       
+        header {
+            background: black;
+            padding: 15px 5%;
+            border-bottom: 1px solid silver;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            color: white;
+        }
+        .logo:hover {
+           color: darkred;
+        }
+
+        .search-container {
+         width: 100%;
+         max-width: 400px; 
+         margin: 0 auto;   
+         position: relative;
+          display: flex;
+         align-items: center;
+        }
+        .search-bar {
+          width: 100%;
+          padding: 8px 40px 8px 15px; 
+          border: 1px solid silver;
+          border-radius: 20px;
+          font-size: 13px; 
+        } 
+
+         .nav-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
+         .nav-icons i:hover {
+            color: darkred;
+        }
+
+        .nav-icons i {
+            cursor: pointer;
+            color: white;
+        }
+
+        .sub-nav {
+            background: black;
+            padding: 10px 5%;
+        }
+
+        .sub-nav a:hover {
+            color: darkred;
+        }
+
+
+        .sub-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .sub-nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .sub-nav li.active {
+            background: black;
+        }
+        .sub-nav li.active a {
+            color: darkred;
+        }
+         .category-title-bar {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+        }
+
+        .category-title-bar h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+        .hero-banner {
+            height: 200px;
+            display: flex;
+            background: url('https://i.pinimg.com/736x/7d/f8/49/7df849b6b49fa6d08baf8293be84b15b.jpg') center/cover;
+            margin: 20px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+        .hero-banner h1 {
+            font-size: 42px;
+        }
+
+        .hero-banner p {
+            font-size: 18px;
+        }
+        .shop {
+            color: black;
+            text-align: center;        
+            padding: 30px 0;
+            text-decoration: underline;
+            text-decoration-color: darkred; 
+            text-underline-offset: 8px;    
+        }
+       .section-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 5%;
+        }
+
+        .grid-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+        }
+       
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #eee;
+            padding: 10px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-brand {
+            font-weight: 800;
+            color: black;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .product-name {
+            font-size: 12px;
+            color: black;
+            margin-bottom: 5px;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: darkred;
+        }
+
+        .add-to-bag {
+            margin-top: 10px;
+            width: 100%;
+            padding: 8px;
+            background: black;
+            color: white;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        .add-to-bag:hover {
+            background: darkred;
+        }
+        .add-to-bag.granted {
+            background-color: green;
+            color: white;
+            cursor: default;
+        }
+              footer {
+            background-color: #000; 
+            color: #ffffff;
+            padding: 60px 30px 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-top: 1px solid darkred;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3, 
+        .footer-column h4 {
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-column p {
+            color: #bbbbbb;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+   
+        .footer-links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+           text-decoration: underline;
+           color: darkred;
+        }
+ 
+        @media (max-width: 768px) {
+            .search-container { display: none; }
+            .sub-nav ul { gap: 10px; }
+            .sub-nav a { font-size: 10px; }
+            .hero-banner { padding-left: 0; justify-content: center; }
+        }
+
+        </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-main">
+            <a href="#" class="logo">VELOURA PERFUME SHOP</a>
+            
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search for brands, fragrances...">
+            </div>
+        </div>
+    </header>
+
+    <nav class="sub-nav">
+        <ul><li><a href="index.html">HOME</a></li>
+            <li><a href="mm.html">SHOP</a></li>
+            <li><a href="women`s.html">WOMEN'S</a></li>
+            <li><a href="men`s perfume.html">Men's</a></li>
+            <li class="active"><a href="gift set.html">Gift Sets</a></li>
+        </ul>
+    </nav>
+    <br>
+    <div class="category-title-bar">
+        <h1>GIFT SET</h1>
+    </div>
+      <section class="hero-banner">
+     <h1 class="hero-title">Elegance In Every Drop</h1>
+</section>
+ <div class="section-container" id="shop">
+        <div class="grid-header">
+            <h2>Perfumes</h2>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/74/04/1c/74041cc2c9e1eca5fc239ece3b762414.jpg" alt="Fragrance">
+                <p class="product-brand">PRADA</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$295.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/75/b1/89/75b189f0dc0b1d6b2057bfde6f264832.jpg" alt="Fragrance">
+                <p class="product-brand">DIOR</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$115.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/ae/89/56/ae8956a286968c19b6aceefb5119ae1c.jpg" alt="Fragrance">
+                <p class="product-brand">CHNNEL</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$300.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/7c/cc/97/7ccc979c41fc4c89106e69ecc76b5c56.jpg" alt="Fragrance">
+                <p class="product-brand">CHNNEL</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$500.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/0c/4f/4a/0c4f4a34c09a55a39b836229f87e71c0.jpg" alt="Fragrance">
+                <p class="product-brand">VICTORIA SECRET</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$364.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/02/fb/f1/02fbf1aa49f886c37c9f638d1466123d.jpg" alt="Fragrance">
+                <p class="product-brand">Maison Francis Kurkdjian</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$545.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/53/d6/9b/53d69bcf45dcf8e741b84adf8d00df16.jpg" alt="Fragrance">
+                <p class="product-brand">KAYALI</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$300.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/00/ca/d1/00cad12657c874b9f8798366bc90fbc9.jpg" alt="Fragrance">
+                <p class="product-brand">Louis Vuitton </p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$800.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+             <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/d0/3a/af/d03aafa2850dd6df9a488c161424604b.jpg" alt="Fragrance">
+                <p class="product-brand">Dana</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$400.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/f6/c5/5b/f6c55b797a5ddfee702485da4287eb43.jpg" alt="Fragrance">
+                <p class="product-brand">Versace </p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$205.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/60/a1/9f/60a19f9eba121537c40d78a80e587da7.jpg" alt="Fragrance">
+                <p class="product-brand">Hermès</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$300.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/19/2e/73/192e7327ba2014ee6ea7eabf9825dd22.jpg" alt="Fragrance">
+                <p class="product-brand">Valentino </p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$200.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/ba/08/5b/ba085b45218a023939e30b5a1343b09e.jpg" alt="Fragrance">
+                <p class="product-brand">Jean Paul Gaultier</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$364.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/37/86/6f/37866f5eb24562c663ebbdb8fb3fb25c.jpg" alt="Fragrance">
+                <p class="product-brand">Moschino </p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$545.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/6f/99/10/6f9910f4a91679206c855c618f427c32.jpg" alt="Fragrance">
+                <p class="product-brand">Yves Saint Laurent</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$399.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/50/a3/1a/50a31a5cd7ea654f04a332789402b1c5.jpg" alt="Fragrance">
+                <p class="product-brand">Gissah </p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$660.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/69/57/06/6957065509fbdb90bb5dc6ebf68544ec.jpg" alt="Fragrance">
+                <p class="product-brand">O Hui</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$454.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/97/82/8a/97828a48878fbf932813f08c89dd90a5.jpg" alt="Fragrance">
+                <p class="product-brand">Versace </p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$545.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/e4/f7/4a/e4f74a0ae7158fe40a3a75d131f18efc.jpg" alt="Fragrance">
+                <p class="product-brand">Guerlain </p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$219.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/a9/08/9d/a9089d354f2be1da0d4f23895eb2eec3.jpg" alt="Fragrance">
+                <p class="product-brand">Miss Sakura</p>
+                <p class="product-name">Eau de Parfum Spray Gift Set</p>
+                <p class="product-price">$660.00</p>
+                <button class="add-to-bag">Add to Bag</button>
+            </div>
+        </div>
+    </div>
+</div>
+     <footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h2>Veloura</h2>
+      <br>
+      <p>The essence of luxury. We curate the world's finest scents to help you find your signature fragrance.</p>
+    </div>
+    
+    <div class="footer-column">
+      <h2>Shop</h2>
+      <br>
+      <ul class="footer-links">
+        <li><a href="men`s perfume.html">Men's Collection</a></li>
+        <li><a href="women`s.html">Women's Collection</a></li>
+        <li><a href="gift set.html">Gift Set</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h2>Support</h2>
+      <br>
+      <ul class="footer-links">
+        <li><a href="contact us.html">Contact Us</a></li>
+        <li><a href="about us.html">About Us</a></li>
+      </ul>
+    </div>
+        <p style="text-align: center; margin-top: 40px; font-size: 12px; color: darkgray;">
+            © 2026 VELOURA PERFUME SHOP LIMITED. ALL RIGHTS RESERVED.
+        </p>
+  
+</footer> 
+
+<script>
+    const searchInput = document.querySelector('.search-bar');
+    const products = document.querySelectorAll('.product-card');
+
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+
+        products.forEach(card => {
+            const brand = card.querySelector('.product-brand').textContent.toLowerCase();
+            const name = card.querySelector('.product-name').textContent.toLowerCase();
+            
+            if (brand.includes(searchTerm) || name.includes(searchTerm)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+
+    const buttons = document.querySelectorAll('.add-to-bag');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            this.textContent = 'GRANTED';
+            this.classList.add('granted');
+            this.style.pointerEvents = 'none';
+        });
+    });
+</script>

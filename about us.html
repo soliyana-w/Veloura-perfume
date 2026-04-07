@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Veloura Perfume Shop</title>  
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/da/9d/fd/da9dfd50664d46a355457cde584f9f66.jpg">
+  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        header {
+            background: black;
+            padding: 15px 5%;
+            border-bottom: 1px solid silver;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            color: white;
+        }
+        .logo:hover { color: darkred; }
+
+        .sub-nav {
+            background: black;
+            padding: 10px 5%;
+        }
+
+        .sub-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .sub-nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        .sub-nav a:hover {
+            color: darkred; 
+        }
+        .container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 5%;
+        }
+
+        .mission-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            flex: 1 1 300px; 
+            max-width: 350px;
+            padding: 40px;
+            background: #fcfcfc;
+            border-top: 4px solid black;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            border-top-color: darkred;
+            transform: translateY(-10px);
+        }
+
+        .card.center-focus {
+            border-top-color: black;
+            background-color: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+         .card.center-focus:hover {
+            border-top-color: darkred;
+            transform: translateY(-10px);
+        }
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .story-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .story-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .story-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 17px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+               footer {
+            background-color: #000; 
+            color: #ffffff;
+            padding: 60px 30px 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-top: 1px solid darkred;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3, 
+        .footer-column h4 {
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-column p {
+            color: #bbbbbb;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+   
+        .footer-links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+           text-decoration: underline;
+           color: darkred;
+        }
+ 
+        @media (max-width: 768px) {
+            .search-container { display: none; }
+            .sub-nav ul { gap: 10px; }
+            .sub-nav a { font-size: 10px; }
+            .hero-banner { padding-left: 0; justify-content: center; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-main">
+            <a href="home.html" class="logo">VELOURA</a>
+        </div>
+    </header>
+
+    <nav class="sub-nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="mm.html">SHOP</a></li>
+            <li><a href="women`s.html">WOMEN'S</a></li>
+            <li><a href="men`s Perfume.html">Men's</a></li>
+            <li><a href="gift set.html">Gift Sets</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="story-section">
+            <h2>The Veloura Story</h2>
+            <p>
+                Founded in 2026, Veloura was established to bridge the gap between luxury fragrance houses and the modern connoisseur.
+            </p>
+        </div>
+
+        <div class="mission-flex">
+            <div class="card">
+                <h2>Our Mission</h2>
+                <p>To provide an unparalleled fragrance experience by offering only the most authentic and high-quality perfumes from around the globe.</p>
+            </div>
+            <div class="card">
+                <h2>Our Vision</h2>
+                <p>To become the world's premier destination for olfactory discovery, where every individual finds their unique signature scent.</p>
+            </div>
+            <div class="card center-focus">
+                <h2>Our Promise</h2>
+                <p>We guarantee 100% authenticity in every bottle and a personalized service that honors the personal journey of finding a fragrance.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h2>Veloura</h2>
+      <br>
+      <p>The essence of luxury. We curate the world's finest scents to help you find your signature fragrance.</p>
+    </div>
+    
+    <div class="footer-column">
+      <h2>Shop</h2>
+      <br>
+      <ul class="footer-links">
+        <li><a href="men`s perfume.html">Men's Collection</a></li>
+        <li><a href="women`s.html">Women's Collection</a></li>
+        <li><a href="gift set.html">Gift Set</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h2>Support</h2>
+      <br>
+      <ul class="footer-links">
+        <li><a href="contact us.html">Contact Us</a></li>
+        <li><a href="#">About US</a></li>
+      </ul>
+    </div>
+        <p style="text-align: center; margin-top: 40px; font-size: 12px; color: darkgray;">
+            © 2026 VELOURA PERFUME SHOP LIMITED. ALL RIGHTS RESERVED.
+        </p>
+  
+</footer>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Perfume Shop | Perfumes | Fragrances | Gift Sets</title>    
+            <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/da/9d/fd/da9dfd50664d46a355457cde584f9f66.jpg">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', Arial, sans-serif;
+            scroll-behavior: smooth;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: white;
+            color: black;
+        }
+
+       
+        header {
+            background: black;
+            padding: 15px 5%;
+            border-bottom: 1px solid silver;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            text-decoration: none;
+            color: white;
+        }
+        .logo:hover {
+           color: darkred;
+        }
+
+         .nav-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
+         .nav-icons i:hover {
+            color: darkred;
+        }
+
+        .nav-icons i {
+            cursor: pointer;
+            color: white;
+        }
+
+        .sub-nav {
+            background: black;
+            padding: 10px 5%;
+        }
+
+        .sub-nav a:hover {
+            color: darkred;
+        }
+
+
+        .sub-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .sub-nav a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .sub-nav li.active {
+            background: black;
+        }
+        .sub-nav li.active a {
+            color: darkred;
+        }
+        .category-title-bar {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-bottom: 20px;
+        }
+
+        .category-title-bar h1 {
+            font-size: 36px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+
+        .hero {
+            height: 60vh;
+            background: #B3B3B3
+                        url('https://i.pinimg.com/736x/de/1d/8b/de1d8bea8eb3454a330aba8bd7a8ed3b.jpg') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-shop {
+            background: white;
+            color: black;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-shop:hover {
+            background: darkred;
+            color: white;
+        }   
+        .brand-story {
+            padding: 100px 10%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .brand-story h2 { 
+            font-size: 32px;
+            margin-bottom: 20px; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+        }
+        .brand-story p { 
+            font-size: 18px; 
+            line-height: 1.8; 
+            color: #444; 
+            font-style: italic; }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 600px;
+        }
+
+        .exp-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exp-box:hover img { 
+            transform: scale(1.05); 
+        }
+
+        .exp-box img {
+            position: absolute;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            z-index: -1;
+            transition: transform 0.8s ease;
+        }
+
+        .exp-box h3 { 
+            font-size: 30px; 
+            text-transform: uppercase; 
+            letter-spacing: 5px; 
+            background: rgba(0,0,0,0.4); 
+            padding: 10px 30px; 
+        }
+       footer {
+            background-color: #000; 
+            color: #ffffff;
+            padding: 60px 30px 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-top: 1px solid darkred;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            gap: 10px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3, 
+        .footer-column h4 {
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-column p {
+            color: #bbbbbb;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+   
+        .footer-links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+           text-decoration: underline;
+           color: darkred;
+        }
+ 
+        @media (max-width: 768px) {
+            .search-container { display: none; }
+            .sub-nav ul { gap: 10px; }
+            .sub-nav a { font-size: 10px; }
+            .hero-banner { padding-left: 0; justify-content: center; }
+        }
+
+
+    </style>
+</head>
+<body>
+  <header>
+        <div class="header-main">
+            <a href="#" class="logo">VELOURA PERFUME SHOP</a>
+            
+        </div>
+    </header>
+
+    <nav class="sub-nav">
+        <ul><li class="active"><a href="home.html">HOME</a></li>
+            <li><a href="mm.html">SHOP</a></li>
+            <li><a href="women`s.html">WOMEN'S</a></li>
+            <li><a href="men`s perfume.html">Men's</a></li>
+            <li><a href="gift set.html">Gift Sets</a></li>
+        </ul>
+    </nav>
+    <br>
+    <div class="category-title-bar">
+        <h1>VELOURA</h1>
+    </div>
+ 
+    <section class="hero">
+        <h1>ELEGANCE IN EVERY DROP</h1>
+        <br>
+        <p>Luxury fragrances for men and women</p>
+        <br>
+          <a href="mm.html" class="btn-shop">Shop Now</a>
+    </section>
+
+    <section class="brand-story">
+        <h2>The Essence of Luxury</h2>
+        <p>We curate the world's finest scents to help you find your signature fragrance. At Veloura, we believe a perfume is more than a scent—it is a memory, a statement, and a piece of art.</p>
+    </section>
+    <section class="experience-grid">
+        <a href="men`s perfume.html" class="exp-box">
+            <img src="https://image.made-in-china.com/2f0j00UaGvBoyhOYcR/100ml-Personality-Creative-Design-Chest-Muscle-Shape-Men-s-Perfume-Bottle.webp" alt="Masculine">
+            <h3>The Masculine</h3>
+        </a>
+        <a href="women`s.html" class="exp-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHrTEFh_l5VSc84cu4nJjwWWTShBZnfiyYg&s" alt="Feminine">
+            <h3>The Feminine</h3>
+        </a>
+    </section>
+
+  <footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h2>Veloura</h2>
+      <br>
+      <p>The essence of luxury. We curate the world's finest scents to help you find your signature fragrance.</p>
+    </div>
+    
+    <div class="footer-column">
+      <h2>Shop</h2>
+      <br>
+      <ul class="footer-links">
+        <li><a href="men`s perfume.html">Men's Collection</a></li>
+        <li><a href="women`s.html">Women's Collection</a></li>
+        <li><a href="gift set.html">Gift Set </a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h2>Support</h2>
+      <br>
+      <ul class="footer-links">
+        <li><a href="contact us.html">Contact Us</a></li>
+        <li><a href="about us.html">About Us</a></li>
+      </ul>
+    </div>
+        <p style="text-align: center; margin-top: 40px; font-size: 12px; color: darkgray;">
+            © 2026 VELOURA PERFUME SHOP LIMITED. ALL RIGHTS RESERVED.
+        </p>
+  
+</footer>
+
+</body>
+</html>
